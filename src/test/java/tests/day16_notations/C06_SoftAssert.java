@@ -19,7 +19,7 @@ public class C06_SoftAssert extends TestBase {
     // Sorfassert baslangici obje olusturmaktir
     SoftAssert softAssert=new SoftAssert();
 
-    @Test
+    @Test(groups = "group2")
     public void test01() {
         // amazon anasayfaya gidin
         driver.get("https://www.amazon.com");

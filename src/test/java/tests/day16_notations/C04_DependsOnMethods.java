@@ -14,7 +14,7 @@ import utilities.TestBase;
 
 import java.time.Duration;
 
-public class C04_DependsOnMethods  {
+public class C04_DependsOnMethods {
     /*
     DependsOnMethod test methodlarinin calisma sirasina karismaz
     Sadece bagli olan test , baglandigi testin sonucuna bakar
@@ -22,6 +22,7 @@ public class C04_DependsOnMethods  {
      */
 
     WebDriver driver;
+
     @BeforeClass
     public void setUpClass() {
         WebDriverManager.chromedriver().setup();
@@ -38,21 +39,25 @@ public class C04_DependsOnMethods  {
     @Test
     public void test01() {
         // amazon anasayfaya gidelim
-        driver.get("https://www.ramazon1.com");
+        driver.get("https://www.amazon.com");
     }
 
     @Test(dependsOnMethods = "test01")
     public void test02() {
         // Nutella aratalim
         driver.get("https://www.amazon.com");
-        WebElement searchBox=driver.findElement(By.id("twotabsearchtextbox"));
-        searchBox.sendKeys("Nutella"+ Keys.ENTER);
+        WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
+        searchBox.sendKeys("Nutella" + Keys.ENTER);
     }
 
     @Test(dependsOnMethods = "test02")
     public void test03() {
         // Sonuc yazisinin Nutella icerdigini test edelim
-        WebElement sonucyaziElement=driver.findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
+        WebElement sonucyaziElement = driver.findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
         Assert.assertTrue(sonucyaziElement.getText().contains("Nutella"));
+    }
+    @Test(groups = {"group1","group2"})
+    public void test04(){
+        System.out.println("bak bu calisti");
     }
 }
