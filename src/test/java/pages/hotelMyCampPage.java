@@ -43,7 +43,7 @@ public class hotelMyCampPage {
     @FindBy(xpath = "//textarea[@dir='ltr']")
     public WebElement addHotelRoomTextBox;
 
-    @FindBy(xpath = "(//i[@class='icon-calendar'])[3]")
+    @FindBy(xpath = "(//a[@href='/admin/HotelRoomAdmin'])")
     public WebElement hotelRooms;
 
     @FindBy(xpath ="//span[@class='hidden-480']")

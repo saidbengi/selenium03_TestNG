@@ -1,4 +1,4 @@
-package tests.day16_notations;
+package tests.day22_crossBrowser;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,19 +7,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.TestBase;
+import utilities.TestBaseCross;
 
-public class C06_SoftAssert extends TestBase {
+public class C02_SoftAssertCross extends TestBaseCross {
 
-    /*
-    Softassertion baslangic ve bitis satirlari arasindaki
-    tum assertion'lari yapip
-    bitis satirina geldiginde bize buldugu tum hatalari rapor eder
 
-     */
     // Sorfassert baslangici obje olusturmaktir
     SoftAssert softAssert=new SoftAssert();
 
-    @Test(groups = "group2")
+    @Test
     public void test01() {
         // amazon anasayfaya gidin
         driver.get("https://www.amazon.com");
@@ -41,14 +37,6 @@ public class C06_SoftAssert extends TestBase {
         // softasserte bitis satirini soylemek icin assertAll() kullanilir
 
         softAssert.assertAll();// bu satir yazilmazsa assertion gorevi yapilmamis olur
-
-        /*
-        Softassert'un hata bulsa bile calismaya devam etme ozelligi
-        assertAll()'a kadardir
-        Eger assertAll()'da failed rapor edilirse calisma durur
-        ve class'in kalan kismi calistirilmaz
-        (Yani assertAll hardAssert'deki her bir assert gibidir, hatayi yakalarsa calismayi durdurur
-         */
 
         System.out.println("assertion'lardan fail olan olursa , burasi calismaz");
     }

@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.hotelMyCampPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class HotelRoomCreation {
 
@@ -44,6 +45,7 @@ public class HotelRoomCreation {
         //8. Save butonuna basin.
         hp.saveButton.click();
         //9. “HotelRoom was inserted successfully” textinin göründüğünü test edin.
+        ReusableMethods.waitFor(2);
         String actualText=hp.passedButonu.getText();
         String expectedText="HotelRoom was inserted successfully";
         Assert.assertTrue(expectedText.contains(actualText));

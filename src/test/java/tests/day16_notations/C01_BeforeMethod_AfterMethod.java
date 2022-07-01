@@ -1,6 +1,7 @@
 package tests.day16_notations;
 
 import org.testng.annotations.Test;
+import utilities.ReusableMethods;
 import utilities.TestBase;
 
 public class C01_BeforeMethod_AfterMethod extends TestBase {
@@ -22,5 +23,6 @@ public class C01_BeforeMethod_AfterMethod extends TestBase {
     @Test
     public void test03() {
         driver.get("https://www.techproeducation.com");
+        ReusableMethods.waitFor(2);
     }
 }

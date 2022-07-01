@@ -1,0 +1,7 @@
+src/belirliClasslariCalistirma.xml
+src/belirliGruplariCalistirma.xml
+src/belirliPackageCalistirma.xml
+src/belirliTestMethodlariCalistirma.xml
+src/tumTestleriCalistirma.xml
+
+bu dosyalari olusturduk onun icin hic bos yapma
