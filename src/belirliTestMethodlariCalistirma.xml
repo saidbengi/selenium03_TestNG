@@ -23,6 +23,7 @@
             <class name="tests.day16_notations.C03_Priority">
                 <methods>
                     <include name="test02"></include>
+
                 </methods>
             </class>
             <class name="tests.day16_notations.C04_DependsOnMethods">
